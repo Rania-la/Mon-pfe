@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de Paiement</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    <style>
+        .payment-form {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: #f7f7f7;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .payment-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .payment-icon {
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+        .btn-paypal {
+            background-color: #0070ba;
+            color: white;
+        }
+        .btn-paypal:hover {
+            background-color: #005ea6;
+        }
+        .btn-visa {
+            background-color: #1a1f71;
+            color: white;
+        }
+        .btn-visa:hover {
+            background-color: #0d133d;
+        }
+        .btn-mastercard {
+            background-color: #eb001b;
+            color: white;
+        }
+        .btn-mastercard:hover {
+            background-color: #c7000a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="payment-form card">
+            <div class="card-header payment-header">
+                <h3>Formulaire de Paiement</h3>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <label for="cardName">Nom sur la carte</label>
+                        <input type="text" class="form-control" id="cardName" placeholder="Nom complet" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cardNumber">Numéro de carte</label>
+                        <input type="text" class="form-control" id="cardNumber" placeholder="Numéro de carte" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="expiryDate">Date d'expiration</label>
+                            <input type="text" class="form-control" id="expiryDate" placeholder="MM/AA" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="cvv">CVV</label>
+                            <input type="text" class="form-control" id="cvv" placeholder="CVV" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="paymentMethod">Méthode de paiement</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="paymentMethod" id="paypal" value="paypal" required>
+                            <label class="form-check-label btn-paypal" for="paypal">
+                                <i class="fab fa-paypal payment-icon"></i> PayPal
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="paymentMethod" id="visa" value="visa">
+                            <label class="form-check-label btn-visa" for="visa">
+                                <i class="fab fa-cc-visa payment-icon"></i> Visa
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="paymentMethod" id="mastercard" value="mastercard">
+                            <label class="form-check-label btn-mastercard" for="mastercard">
+                                <i class="fab fa-cc-mastercard payment-icon"></i> MasterCard
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Payer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

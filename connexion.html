@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de Connexion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden; /* Pour masquer le défilement de la vidéo en plein écran */
+        }
+
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ajuster la vidéo pour remplir l'espace sans déformation */
+            z-index: -1; /* Placer la vidéo en arrière-plan */
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.7); /* Fond noir transparent */
+            color: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            width: 320px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Ombre pour l'effet de profondeur */
+            transform-style: preserve-3d; /* Indique que les enfants sont dans un espace 3D */
+            transform: rotateY(15deg); /* Rotation initiale */
+            transition: transform 0.5s ease;
+        }
+
+        h2 {
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            background-color: rgba(255, 255, 255, 0.1); /* Fond blanc transparent */
+            color: #fff;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            background-color: rgba(255, 255, 255, 0.2); /* Fond blanc plus transparent au focus */
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            background-color: #c8a97e; /* Couleur pour le bouton */
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #a1875a; /* Variation de couleur au survol */
+        }
+
+        /* Animation 3D au survol du formulaire */
+        .container:hover {
+            transform: rotateY(0deg); /* Rotation pour l'effet 3D */
+        }
+
+        /* Style pour le lien de création de compte */
+        .create-account-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .create-account-link a {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .create-account-link a:hover {
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Vidéo en arrière-plan -->
+    <video autoplay loop muted>
+        <source src="images/video1.mp4" type="video/mp4">
+        <!-- Ajoutez ici d'autres formats vidéo pour une compatibilité multi-navigateur -->
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="container">
+        <h2>Connexion</h2>
+        <form id="loginForm" action="connexion.php" method="post">
+            <div class="input-group">
+                <input type="email" id="loginEmail" name="email" placeholder="Email" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="loginPassword" name="password" placeholder="Mot de passe" required>
+            </div>
+            <button type="submit">Se connecter</button>
+        </form>
+
+        <!-- Lien pour créer un compte -->
+        <div class="create-account-link">
+            <p>Vous n'avez pas de compte ? <a href="inscription.html">Créer un compte</a></p>
+        </div>
+    </div>
+
+   
+</body>
+</html>

@@ -1,0 +1,13 @@
+body {
+    background: url('images/D8.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+}
+
+.custom-control-label i {
+    margin-right: 10px;
+}
